@@ -1,12 +1,30 @@
-.add-bar{
+.add-bar {
     width: 35%;
     height: 40%;
 }
 
-.modal{
+.modal {
     width: 35%;
     height: 90%;
+    display: grid;
+    place-items: center;
+}
+
+.todo-element {
+    width: 90%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.done-button {
+    width: 35%;
+    height: 40%;
 }
 
 
-
+.delete-button {
+    width: 35%;
+    height: 40%;
+}

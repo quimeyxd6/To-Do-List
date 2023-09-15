@@ -10,6 +10,9 @@ class ToDoElements{
         this.createAddBar(center);
         this.createTodoSection(mainSection);
         this.createDoneSection(mainSection);
+
+        
+        
     }
     
     createAddBar(center){
@@ -25,6 +28,12 @@ class ToDoElements{
 
         const modalTodo = document.createElement("div");
         modalTodo.classList.add("outLine", "modal");
+
+        const TodoCreator = new ElementToDO();
+
+        for (let i = 1; i <= 5; i++) {
+            TodoCreator.create(modalTodo);
+        }
 
         mainSection.appendChild(modalTodo)
     }
@@ -54,13 +63,17 @@ class ElementToDO{
 
     }
 
-    create(){
+    create(todoSection){
         const element = document.createElement("div");
         const doneButton = document.createElement("div");
-        const deletButton = document.createElement("div");
+        const deleteButton = document.createElement("div");
 
-        element.classList.add("todo-element");
-        doneButton.classList.add("done-buton");
-        
+        element.classList.add("todo-element", "outLine");
+        doneButton.classList.add("done-button", "outLine");
+        deleteButton.classList.add("delete-button", "outLine"); 
+
+        element.appendChild(doneButton);
+        element.appendChild(deleteButton);
+        todoSection.appendChild(element);
     }
 }
