@@ -2,9 +2,15 @@
 
 const principal = document.getElementById("main");
 
-const primerDiv = document.createElement("div");
-primerDiv.classList.add("probando");
+const header = document.createElement("div");
+header.classList.add("outline", "header");
 
-principal.appendChild(primerDiv);
+const center = document.createElement("div");
+center.classList.add("outline", "center");
 
-console.log("pito");
+const mainSection = document.createElement("div");
+mainSection.classList.add("outline", "mainSection");
+
+principal.appendChild(header);
+principal.appendChild(center);
+principal.appendChild(mainSection);
