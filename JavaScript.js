@@ -14,3 +14,10 @@ mainSection.classList.add("outline", "mainSection");
 principal.appendChild(header);
 principal.appendChild(center);
 principal.appendChild(mainSection);
+
+const btn = document.createElement("button");
+const probando = document.createElement("span");
+probando.classList.add("button_top");
+probando.textContent = "boton";
+header.appendChild(btn);
+btn.appendChild(probando);
