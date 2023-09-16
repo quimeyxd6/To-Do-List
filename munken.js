@@ -1,9 +1,9 @@
-class ToDoElements{
-    constructor(){
+class ToDoElements {
+    constructor() {
         //hidde the implicit one
     }
 
-    addElements(){
+    addElements() {
         const center = document.getElementById("center");
         const mainSection = document.getElementById("main-section-containter");
 
@@ -11,69 +11,95 @@ class ToDoElements{
         this.createTodoSection(mainSection);
         this.createDoneSection(mainSection);
 
-        
-        
-    }
-    
-    createAddBar(center){
 
-        const addBar = document.createElement("div");
-        addBar.classList.add("outLine", "add-bar");
-
-        center.appendChild(addBar)
 
     }
 
-    createTodoSection(mainSection){
+    createAddBar(center) {
+        const container = document.createElement("div");
+        container.classList.add("outLine", "add-bar-container");
 
-        const modalTodo = document.createElement("div");
-        modalTodo.classList.add("outLine", "modal");
+        const addBar = document.createElement("input");
+        addBar.classList.add("outLine");
+
+        const sendButton = document.createElement("div");
+        sendButton.classList.add("outLine", "done-button");
+
 
         const TodoCreator = new ElementToDO();
 
-        for (let i = 1; i <= 5; i++) {
-            TodoCreator.create(modalTodo);
-        }
+        sendButton.onclick = () => {
+            if (addBar.value != "") {
+                TodoCreator.create(document.getElementById("modal-todo"), document.getElementById("modal-done"),  addBar.value);
+                addBar.value = "";
+            }
+        };
+
+
+        container.appendChild(addBar);
+        container.appendChild(sendButton);
+        center.appendChild(container);
+    }
+
+    createTodoSection(mainSection) {
+
+        const modalTodo = document.createElement("div");
+        modalTodo.id = "modal-todo"
+        modalTodo.classList.add("outLine", "modal");
+
 
         mainSection.appendChild(modalTodo)
     }
 
-    createDoneSection(mainSection){
+    createDoneSection(mainSection) {
 
         const modalDone = document.createElement("div");
+        modalDone.id = "modal-done";
         modalDone.classList.add("outLine", "modal");
-
+        
         mainSection.appendChild(modalDone)
 
     }
-
-    addTodo(){
-        // here it will be created a todo item (probably an object¿¿)
-    }
-
-    compleateTodo(){
-        //the name sayit all
-    }
-
+ 
 
 }
 
-class ElementToDO{
-    constructor(){
+class ElementToDO {
+    constructor() {
 
     }
 
-    create(todoSection){
+    create(todoSection, doneSection, text) {
         const element = document.createElement("div");
         const doneButton = document.createElement("div");
         const deleteButton = document.createElement("div");
 
         element.classList.add("todo-element", "outLine");
         doneButton.classList.add("done-button", "outLine");
-        deleteButton.classList.add("delete-button", "outLine"); 
+        deleteButton.classList.add("delete-button", "outLine");
 
+        deleteButton.onclick = () => {
+
+            
+            element.remove();
+            
+            
+        }
+
+        doneButton.onclick = () => {
+            
+            doneButton.remove();
+            element.remove();
+            doneSection.appendChild(element)
+        }        
+
+
+        element.innerHTML = text;
         element.appendChild(doneButton);
         element.appendChild(deleteButton);
         todoSection.appendChild(element);
     }
+    
+    
+
 }

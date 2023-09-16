@@ -1,6 +1,15 @@
-.add-bar {
+.add-bar-container{
     width: 35%;
     height: 40%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input{
+    width: 50%;
+    height: 100%;
 }
 
 .modal {
