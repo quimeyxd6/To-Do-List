@@ -13,6 +13,10 @@ input{
 }
 
 .modal {
+    background-color: #676077;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
+
     width: 35%;
     height: 90%;
     display: grid;
@@ -20,6 +24,8 @@ input{
 }
 
 .todo-element {
+background-color: #edd48e;
+
     width: 90%;
     height: 40px;
     display: flex;
@@ -28,12 +34,23 @@ input{
 }
 
 .done-button {
-    width: 35%;
-    height: 40%;
+    background-color: green;
+
+    border-radius: 50px;
+
+    margin: 5px;
+    width: 30px;
+    height: 30px;
 }
 
 
 .delete-button {
-    width: 35%;
-    height: 40%;
+
+    background-color: red;
+
+    border-radius: 50px;
+
+    margin: 5px;
+    width: 30px;
+    height: 30px;
 }

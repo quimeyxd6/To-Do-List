@@ -1,0 +1,53 @@
+.toggle-button-container {
+    height: 45%;
+    width: 5%;
+    position: relative;
+}
+
+.second-container{ 
+    overflow: hidden;
+}
+
+.toggle-button {
+    height: 33px;
+    width: 33px;
+    position: relative;
+    top: 17px;
+    border-radius: 30px;
+    overflow: hidden;
+    transition: 200ms;
+}
+
+.day-icon {
+    background-color: rgb(255, 255, 143);
+    height: 50%;
+}
+
+.night-icon {
+    background-color: rgb(12, 12, 100);
+    height: 50%;
+}
+
+.asd{
+    position: relative;
+    width: 110%;
+    height: 20px;
+    
+    top: -20%;
+    left: -5%;
+}
+
+.cloudStile{
+    position: absolute;
+
+    background-color: rgb(216, 216, 216);
+    border: 0.5px solid rgb(168, 167, 167);
+    border-radius: 50px;
+    width: 7px;
+    height: 6px;
+}
+
+.rotate-icon {
+    transition: 200ms;
+    transform: rotate(180deg);
+}

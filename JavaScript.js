@@ -19,6 +19,14 @@ getStartedButton.classList.add("outLine", "startButton")
 
 
 
+///////////////////////////////////////////////////////
+
+const modeManager = new ModeManager;
+header.appendChild(modeManager.createToggleButton());
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
 getStartedButton.onclick = () => {
     getStartedButton.remove();
     myFirtObjet.addElements();
