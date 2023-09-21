@@ -7,7 +7,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="main" class="full"></div>
+    <header class="outline">
+        <button class="outline" id="btn_mode">
+            <span>Boton</span>
+        </button>
+    </header>
+    <section class="main">
+        <div class="outline div_form">
+            <form class="task">
+                <input type="text" name="task" id="input_task" placeholder="Agregar Tarea...">
+                <button class="task_add" id="btn_task">+</button>
+            </form>
+        </div>
+            <div class="outline task_container">
+                <ul id="ul_task">
+
+                </ul>
+            </div>
+            <div class="outline complete_container">
+                <ul id="ul_complete">
+
+                </ul>
+            </div>
+        
+    </section>
     <script src="JavaScript.js"></script>
 </body>
 </html>
