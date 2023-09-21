@@ -1,13 +1,24 @@
 'use strict'
 
 const mode = document.getElementById('btn_mode');
-const task = document.getElementById('input_task');
-const btnTask = document.getElementById('btn_task');
-const listTask = document.getElementById('ul_task');
-const listComplete = document.getElementById('ul_complete');
+const taskInput = document.getElementById('input_task');
 
-btn.addEventListener('click', (e)=>{
-    e.preventDefault();
+const taskList = [];
+
+function addTask(){
+    const task = taskInput.value;
+    if (task !== '') {
+        taskList.push(task);
+
+        taskInput.value = '';
+    }
+}
 
 
+
+const prueba = document.getElementById('btn_task');
+prueba.addEventListener('click', ()=>{
+    addTask();
 })
+
+console.log(taskList)

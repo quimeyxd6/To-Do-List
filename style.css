@@ -24,3 +24,7 @@ section {
 ul {
     height: 50px;
 }
+
+.li_task {
+    display: flex;
+}
