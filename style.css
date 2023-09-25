@@ -28,3 +28,6 @@ ul {
 .li_task {
     display: flex;
 }
+.boton {
+    padding: 10px;
+}
