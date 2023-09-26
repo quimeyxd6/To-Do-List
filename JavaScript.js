@@ -23,7 +23,6 @@ function mostrarTareas() {
          // Este div 
      
         const item = document.createElement('li'); //esto tendría que ear adento de la lista no adentro de div
-        item.id = 'items';
 
         const elemento = document.createElement('div');
         elemento.innerHTML = contenido;
@@ -35,11 +34,10 @@ function mostrarTareas() {
         btnComplete.id = "complete"; //lo mismo con el id
 
         btnComplete.onclick = () => {
-            tareasCompletas();
+            tareasCompletas(item);
             console.log("hell")
             btnComplete.remove();
         };
-        
 
         item.appendChild(btnComplete);
 
@@ -54,12 +52,11 @@ function mostrarTareas() {
         listaTareas.appendChild(item);
 }//Funciona
 
-function tareasCompletas() {
-    const mover = document.getElementById('items');
-    console.log(mover)
-    if(mover){
-        listaTareas.removeChild(mover);
-        listaCompleta.appendChild(mover);
+function tareasCompletas(elemento) {
+    console.log(elemento)
+    if(elemento){
+        listaTareas.removeChild(elemento);
+        listaCompleta.appendChild(elemento);
     }
 }
 
