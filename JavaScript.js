@@ -1,6 +1,9 @@
 'use strict'
 
 const mode = document.getElementById('btn_mode'); //esto no hace nada
+const botonTarea = document.getElementById('btn_tarea');
+const listaTareas = document.getElementById('task_container');
+const listaCompleta = document.getElementById('task_complete');
 
 const tareas = []; //eso es global
 
@@ -14,41 +17,50 @@ function agregar() {
     };
 };//Funciona
 
-const listaTareas = document.getElementById('task_container'); // esto tendría que estar arriba
+ // esto tendría que estar arriba
 function mostrarTareas() {
-        const prueba = tareas.slice(-1); //esto toma el último elemento agregado a "tareas"
-        const elemento = document.createElement('div'); // Este div 
-
-        elemento.setAttribute('id', 'elemento'); //por qué esto no está con "elemento.id = "" "?? todos tienen el mismo id
+        const contenido = tareas.slice(-1); //esto toma el último elemento agregado a "tareas"
+         // Este div 
+     
         const item = document.createElement('li'); //esto tendría que ear adento de la lista no adentro de div
-        item.textContent = prueba; 
-        elemento.appendChild(item); //lo mismo no tendría que estar adentro de un div
+        item.id = 'items';
+
+        const elemento = document.createElement('div');
+        elemento.innerHTML = contenido;
+
+        item.appendChild(elemento); //lo mismo no tendría que estar adentro de un div
 
         const btnComplete = document.createElement('button'); 
         btnComplete.classList.add('boton');
-        btnComplete.setAttribute('id', 'complete'); //lo mismo con el id
+        btnComplete.id = "complete"; //lo mismo con el id
 
-        elemento.appendChild(btnComplete);
+        btnComplete.onclick = () => {
+            tareasCompletas();
+            console.log("hell")
+            btnComplete.remove();
+        };
+        
+
+        item.appendChild(btnComplete);
 
         const btnDelete = document.createElement('button');
         btnDelete.classList.add('boton'); //este no tiene id
+        btnDelete.onclick = () => {
+            item.remove();
+        };
 
-        elemento.appendChild(btnDelete);
+        item.appendChild(btnDelete);
 
-        listaTareas.appendChild(elemento);
+        listaTareas.appendChild(item);
 }//Funciona
 
-const listaCompleta = document.getElementById('task_complete'); //esto tiene que estar declarado arriba
-
-
 function tareasCompletas() {
-    const mover = document.getElementById('elemento');
+    const mover = document.getElementById('items');
     console.log(mover)
     if(mover){
         listaTareas.removeChild(mover);
         listaCompleta.appendChild(mover);
     }
-    //Tomo elemento, pero no especifico cual, a corregir
 }
 
 document.getElementById('input_task').addEventListener('keydown', function (event) {
@@ -57,10 +69,6 @@ document.getElementById('input_task').addEventListener('keydown', function (even
     };
 });
 
-const accion = document.getElementById('complete');
-
-accion.addEventListener('click', ()=>{
-        tareasCompletas();
-})
-
-
+botonTarea.onclick = () => {
+    agregar();
+}

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header class="outline">
         <button class="outline" id="btn_mode">
@@ -14,21 +16,25 @@
     </header>
     <section class="main">
         <div class="outline div_form">
-                <input type="text" name="task" id="input_task" placeholder="Agregar Tarea...">
-                <button class="task_add" id="btn_task">+</button>
+            <input type="text" name="task" id="input_task" placeholder="Agregar Tarea...">
+            <button class="task_add" id="btn_tarea">+</button>
         </div>
-            <div class="outline">
+        <div class="listas">
+            <div class="outline lista1">
                 <ul id="task_container">
-                    
+    
                 </ul>
             </div>
-            <div class="outline complete_container">
+            <div class="outline lista2">
                 <ul id="task_complete">
-                    
+    
                 </ul>
             </div>
+        </div>
         
+
     </section>
     <script src="JavaScript.js"></script>
 </body>
+
 </html>

@@ -12,9 +12,9 @@ section {
     height: 95%;
 }
 
-.full{
+.main{
     height: 100%;
-    display: block;
+    width: 100%;
 }
 
 .outline {
@@ -25,9 +25,22 @@ ul {
     height: 50px;
 }
 
-.li_task {
-    display: flex;
-}
+
 .boton {
     padding: 10px;
+}
+
+.listas {
+    display: flex;
+    
+}
+
+.lista1 {
+    height: 300px;
+    width: 200px;
+}
+
+.lista2 {
+    height: 300px;
+    width: 200px;
 }
