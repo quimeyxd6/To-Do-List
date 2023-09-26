@@ -21,6 +21,12 @@ class ToDoElements {
 
         const addBar = document.createElement("input");
         addBar.classList.add("outLine");
+        addBar.addEventListener('keydown', (e)=> {
+            if(e.key === 'Enter'){
+                TodoCreator.create(document.getElementById("modal-todo"), document.getElementById("modal-done"),  addBar.value);
+                addBar.value = "";
+            }
+        })
 
         const sendButton = document.createElement("div");
         sendButton.classList.add("outLine", "done-button");
