@@ -105,6 +105,7 @@ body {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    overflow: hidden;
 }
 
 /*-----Divs containing ul-----*/
@@ -116,6 +117,15 @@ body {
     display: flex;
     justify-content: center;
     border: var(--border);
+    overflow: auto;
+}
+
+.list-tasks { /* Hidden scrollbar in Firefox*/
+    scrollbar-width: none;
+}
+
+.list-tasks::-webkit-scrollbar { /* Hidden scrollbar in webkit browsers*/
+    display: none;
 }
 
 /*-----ul-----*/
@@ -124,6 +134,7 @@ body {
     list-style-type: none;
     width: 90%;
     font-size: 17px;
+    
 }
 
 /*-----Items within the ul-----*/
