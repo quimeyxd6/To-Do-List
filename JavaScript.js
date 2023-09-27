@@ -1,7 +1,6 @@
 'use strict'
 
 const mode = document.getElementById('btn-mode'); //esto no hace nada
-const botonTarea = document.getElementById('send-btn');
 const listaTareas = document.getElementById('tasks');
 const listaCompleta = document.getElementById('tasks-complete');
 
@@ -71,7 +70,3 @@ document.getElementById('take-task').addEventListener('keydown', function (event
         agregar();
     };
 });
-
-botonTarea.onclick = () => {
-    agregar();
-}
