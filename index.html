@@ -10,14 +10,14 @@
 
 <body>
     <header class="outline">
-        <button class="outline mode" id="btn-mode">
-            <span>Boton</span>
-        </button>
+        <label class="switch">
+            <input type="checkbox" class="checkbox">
+            <div class="slider"></div>
+        </label>
     </header>
-    <section class="main">
+    
         <div class="outline form">
-            <input type="text" name="task" id="take-task" class="input-task" placeholder="Agregar Tarea...">
-            <button class="send-btn" id="send-btn">+</button>
+            <input type="text" name="text" id="take-task" class="input-task" placeholder="Agregar Tarea...">
         </div>
         <div class="lists">
             <div class="outline list-tasks">
@@ -25,7 +25,7 @@
     
                 </ul>
             </div>
-            <div class="outline list-tasks-complete">
+            <div class="outline list-tasks">
                 <ul id="tasks-complete" class="outline">
     
                 </ul>
@@ -33,7 +33,7 @@
         </div>
         
 
-    </section>
+    
     <script src="JavaScript.js"></script>
 </body>
 

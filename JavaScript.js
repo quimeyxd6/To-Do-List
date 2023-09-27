@@ -31,8 +31,12 @@ function mostrarTareas() {
 
         item.appendChild(elemento); //lo mismo no tendría que estar adentro de un div
 
+        const btnContain = document.createElement('div');
+        btnContain.classList.add('buttons');
+        item.appendChild(btnContain);
+
         const btnComplete = document.createElement('button'); 
-        btnComplete.classList.add('botonC');
+        btnComplete.classList.add('btnC');
         btnComplete.id = "complete"; //lo mismo con el id
 
         btnComplete.onclick = () => {
@@ -41,15 +45,15 @@ function mostrarTareas() {
             btnComplete.remove();
         };
 
-        item.appendChild(btnComplete);
+        btnContain.appendChild(btnComplete);
 
         const btnDelete = document.createElement('button');
-        btnDelete.classList.add('botonD'); //este no tiene id
+        btnDelete.classList.add('btnD'); //este no tiene id
         btnDelete.onclick = () => {
             item.remove();
         };
 
-        item.appendChild(btnDelete);
+        btnContain.appendChild(btnDelete);
 
         listaTareas.appendChild(item);
 }//Funciona
