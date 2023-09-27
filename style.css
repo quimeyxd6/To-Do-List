@@ -1,24 +1,30 @@
+:root {
+    --color-backgrond: #060606;
+    --color-list: #151f25;
+    --color3: #33424e;
+    --color4: #506781;
+    --color5: #758fb2;
+}
+
 body {
     margin: 0;
-    background-color: grey;
+    background-color: var(--color-backgrond);
     height: 100vh;
 }
 
 header {
-    height: 5%;
+    height: 7%;
+    display: flex;
+    justify-content: flex-end;
 }
-
-section {
-    height: 95%;
+.outline {
+    border: 1px solid red;
 }
 
 .main{
+    height: 93%;
     display: flex;
     flex-direction: column;
-}
-
-.outline {
-    border: 1px solid red;
 }
 
 .form {
@@ -26,14 +32,15 @@ section {
     justify-content: center;
 }
 
-
-.boton {
-    padding: 10px;
+.input-task {
+   width: 30vh;
 }
 
 .lists {
     display: flex;
     justify-content: center;
+    
+    
 }
 
 ul {
@@ -45,12 +52,12 @@ ul {
 .list-tasks {
     height: 350px;
     width: 250px;
-    justify-content: center;
-    text-align: center;
+    
+    background-color: var(--color-list);
 }
 
 .list-tasks-complete {
     height: 350px;
     width: 250px;
-    text-align: center;
+    background-color: var(--color-list);
 }

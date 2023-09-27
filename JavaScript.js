@@ -22,15 +22,17 @@ function mostrarTareas() {
         const contenido = tareas.slice(-1); //esto toma el último elemento agregado a "tareas"
          // Este div 
      
-        const item = document.createElement('li'); //esto tendría que ear adento de la lista no adentro de div
-        
+        const item = document.createElement('li');
+        item.classList.add('item') //esto tendría que ear adento de la lista no adentro de div
+
         const elemento = document.createElement('p');
+        elemento.classList.add('text')
         elemento.innerHTML = contenido;
 
         item.appendChild(elemento); //lo mismo no tendría que estar adentro de un div
 
         const btnComplete = document.createElement('button'); 
-        btnComplete.classList.add('boton');
+        btnComplete.classList.add('botonC');
         btnComplete.id = "complete"; //lo mismo con el id
 
         btnComplete.onclick = () => {
@@ -42,7 +44,7 @@ function mostrarTareas() {
         item.appendChild(btnComplete);
 
         const btnDelete = document.createElement('button');
-        btnDelete.classList.add('boton'); //este no tiene id
+        btnDelete.classList.add('botonD'); //este no tiene id
         btnDelete.onclick = () => {
             item.remove();
         };
