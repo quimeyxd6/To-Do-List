@@ -1,17 +1,17 @@
 'use strict'
 
-const mode = document.getElementById('btn_mode'); //esto no hace nada
-const botonTarea = document.getElementById('btn_tarea');
-const listaTareas = document.getElementById('task_container');
-const listaCompleta = document.getElementById('task_complete');
+const mode = document.getElementById('btn-mode'); //esto no hace nada
+const botonTarea = document.getElementById('send-btn');
+const listaTareas = document.getElementById('tasks');
+const listaCompleta = document.getElementById('tasks-complete');
 
 const tareas = []; //eso es global
 
 function agregar() {
-    const tarea = document.getElementById('input_task').value;
+    const tarea = document.getElementById('take-task').value;
     if (tarea !== '') {
         tareas.push(tarea);
-        document.getElementById('input_task').value = '';
+        document.getElementById('take-task').value = '';
         console.log(tareas);
         mostrarTareas();
     };
@@ -23,8 +23,8 @@ function mostrarTareas() {
          // Este div 
      
         const item = document.createElement('li'); //esto tendría que ear adento de la lista no adentro de div
-
-        const elemento = document.createElement('div');
+        
+        const elemento = document.createElement('p');
         elemento.innerHTML = contenido;
 
         item.appendChild(elemento); //lo mismo no tendría que estar adentro de un div
@@ -60,7 +60,7 @@ function tareasCompletas(elemento) {
     }
 }
 
-document.getElementById('input_task').addEventListener('keydown', function (event) {
+document.getElementById('take-task').addEventListener('keydown', function (event) {
     if (event.key === 'Enter') {
         agregar();
     };
