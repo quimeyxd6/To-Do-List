@@ -1,4 +1,10 @@
-
+:root {
+    --color-backgrond: #ffffff;
+    --color-list: #032db8;
+    --color-item: #166fdb;
+    --color-text: rgb(0, 0, 0);
+    --border: 1.5px solid lightgrey;
+}
 
 body {
     margin: 0;
