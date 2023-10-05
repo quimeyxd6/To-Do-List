@@ -10,14 +10,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e546749a82.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header class="mode">
-        <label class="switch">
-            <input type="checkbox" class="checkbox">
-            <div class="slider"></div>
-        </label>
+        <button class="switch" id="switch">
+            <span><i class="fa-solid fa-sun"></i></span>
+            <span><i class="fa-solid fa-moon"></i></span>
+        </button>
     </header>
     <div class="form">
         <input type="text" name="text" id="take-task" class="input-task" placeholder="Add task...">
